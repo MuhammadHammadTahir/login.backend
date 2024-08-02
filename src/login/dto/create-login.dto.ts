@@ -4,14 +4,14 @@ export class CreateLoginDto {
     
 @ApiProperty()
 @IsString()
-@IsNotEmpty()
-@IsOptional()
+ @IsNotEmpty()
+ @IsOptional()
 username : string;
 
 @ApiProperty()
 @IsString()
-@IsNotEmpty()
-@IsOptional()
+ @IsNotEmpty()
+ @IsOptional()
 password: string;
 
 }

@@ -15,8 +15,9 @@ export class LoginService {
     return this.prisma.article.findMany({});
   }
 
-  findOne(id: number) {
-    return this.prisma.article.findMany({where:{id}});
+  findOne(username: string, password: string) {
+    if(this.prisma.article.findMany({where:{username, password}}))
+    return this.prisma.article.findMany({where:{username, password}});
   }
 
   update(id: number, updateLoginDto: UpdateLoginDto) {

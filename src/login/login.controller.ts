@@ -22,10 +22,10 @@ export class LoginController {
     return this.loginService.findAll();
   }
 
-  @Get(':id')
+  @Get(':username/:password')
   @ApiOkResponse({ type: LoginEntity, isArray: true })
-  findOne(@Param('id') id: string) {
-    return this.loginService.findOne(+id);
+  findOne(@Param('username') username: string, @Param('password') password: string) {
+    return this.loginService.findOne(username, password);
   }
 
   @Patch(':id')
